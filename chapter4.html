@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4</title>
+    <link rel="stylesheet" href="chapter.css">
+</head>
+
+<body>
+    <h1 align="center">IP Address</h1>
+    <hr width="500px">
+    <div class="index">
+        <button><a href="index.html">Index</a></button>
+    </div>
+    <p>An IP address, or <strong>Internet Protocol</strong> address, is a series of numbers that identifies any device
+        on a network. Computers use IP addresses to communicate with each other both over the internet as well as on
+        other networks.An IP address identifies a network or device on the internet. <br>
+
+        It is generally expressed in a set of numbers <strong>for example 192.155.12.1 </strong>. Here each number in
+        the set is from <em> 0 to 255 range</em>. Or we can say that a full IP address ranges from 0.0.0.0 to
+        255.255.255.255. And these IP addresses are assigned by <strong> <a  id="iana" href="./glossary.html#giana">IANA </a></strong>(known as Internet Corporation For
+        Internet Assigned Numbers Authority).
+
+
+    <h4><u>Parts of IP Address </u></h4>
+    An IP address has two parts: <strong><a  id="ni" href="./glossary.html#gni">the network ID</a> </strong>, comprising the first three numbers of the address,
+    and <strong> <a  id="hi" href="./glossary.html#ghi">a host ID</a></strong>, the fourth number in the address. So on your home network — 192.168.1.1, for example
+    – 192.168.1 is the network ID, and the final number is the host ID.
+
+    <h4><u>Types of IP Address </u></h4>
+    <ol>
+        <li>IPv4</li>
+        <li>IPv6</li>
+    </ol>
+    </p>
+
+    <h3 align="center"><u>IPv4</u></h3>
+    <p>IPv4: Internet Protocol version 4. It consists of 4 numbers separated by the dots. Each number can be from 0-255
+        in decimal numbers. But computers do not understand decimal numbers, they instead change them to binary numbers
+        which are only 0 and 1. Therefore, in binary, this (0-255) range can be written as (00000000 – 11111111). Since
+        each number N can be represented by a group of 8-digit binary digits. So, a whole IPv4 binary address can be
+        represented by 32-bits of binary digits. In IPv4, a unique sequence of bits is assigned to a computer, so a
+        total of (2^32) devices approximately = 4,294,967,296 can be assigned with IPv4. </p>
+
+    <h3><u>Classes of IPv4</u></h3>
+    <table border="2px" cellpadding="4px" cellspacing="4px">
+        <tr>
+            <td>Class</td>
+            <td>Range</td>
+            <td align="center">NID</td>
+            <td align="center">HID</td>
+        </tr>
+        <tr>
+            <td>Class A</td>
+            <td>0-127</td>
+            <td align="center">8</td>
+            <td align="center">24</td>
+        </tr>
+        <tr>
+            <td>Class B</td>
+            <td>128-191</td>
+            <td align="center">16</td>
+            <td align="center">16</td>
+        </tr>
+        <tr>
+            <td>Class C</td>
+            <td>192-223</td>
+            <td align="center">24</td>
+            <td align="center">8</td>
+        </tr>
+        <tr>
+            <td>Class D</td>
+            <td>224-239</td>
+            <td colspan="2">Reserved for multitasking</td>
+
+        </tr>
+        <tr>
+            <td>Class E</td>
+            <td>240-255</td>
+            <td colspan="2">Reserved for research and development</td>
+
+        </tr>
+    </table>
+    <center>
+        <img src="class.png" alt="img">
+    </center>
+    <h3><u> Notation of IP Address </u></h3>
+    <ol>
+        <li>Dotted Decimal</li>
+        <li>Binary Notation</li>
+    </ol>
+    <h4>Dotted Decimal</h4>
+    <p> IPv4 addresses are most often written in dotted decimal notation. In this format, each 8-bit byte in the 32-bit
+        IPv4 address is converted from binary or hexadecimal to a decimal number between 0 (0000 0000 or 0x00) and 255
+        (1111 1111 or 0xFF). The numbers are then written as four decimal numbers with dots between them: W.X.Y.Z. <br>
+
+        For example, 1010 1100 0001 0000 1100 1000 0000 0010 (0xAC 10 C8 02) becomes 172.16.200.2. And 1011 1111 1111
+        1111 0000 1110 0010 1100 (0xBF FF 0E 2C) becomes 191.255.14.44, and so on. <br>
+
+        To make the IPv4 address more compact and easier to read, an IPv4 address is
+        usually written in decimal form with a decimal point (dot) separating the bytes. This
+        format is referred to as dotted-decimal notation. Figure 1 shows an IPv4 address in
+        dotteddecimal notation. Note that because each byte (octet) is only 8 bits, each
+        number in the dotted-decimal notation is between 0 and 255.
+
+    </p>
+
+    <h4>Binary Notation</h4>
+    <p>In binary notation, an IPv4 address is displayed as 32 bits. To make the address more
+        readable, one or more spaces is usually inserted between each octet (8 bits). Each
+        octet is often referred to as a byte. So it is common to hear an IPv4 address referred
+        to as a 32-bit address, a 4-octet address, or a 4-byte address. The following is an
+        example of an IPv4 address in binary notation: <br>
+        For example, the IPv4 address 11000000101010000000101000011001 is represented as 192.168.10.25 in dotted decimal
+        notation.</p>
+    <h3 align="center">IPv6</h3>
+    <hr width="500px">
+    <p>The main difference between IPv4 and IPv6 is the address size of IP addresses. The IPv4 is a 32-bit address,
+        whereas IPv6 is a 128-bit hexadecimal address. IPv6 provides a large address space, and it contains a simple
+        header as compared to IPv4.
+
+        IPv6 is a 128-bit hexadecimal address made up of 8 sets of 16 bits each, and these 8 sets are separated by a
+        colon. In IPv6, each hexadecimal character represents 4 bits. So, we need to convert 4 bits to a hexadecimal
+        number at a time. <br>
+
+    <h3>Difference between IPv4 and IPv6</h3>
+    <img src="diff3.png" alt="img">
+    </p>
+    <button> &larr;&nbsp;<a href="./chapter3.html">Previous</a> </button>
+
+</body>
+
+</html>
