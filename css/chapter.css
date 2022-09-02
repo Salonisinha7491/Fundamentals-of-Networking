@@ -1,0 +1,14 @@
+body{
+    background-color: antiquewhite;
+    margin: 30px;
+    margin-left: 50px;
+}
+.align{
+    text-align: right;
+}
+.index{
+    text-align: right ;
+}
+.copy{
+    margin: 20px;
+}
