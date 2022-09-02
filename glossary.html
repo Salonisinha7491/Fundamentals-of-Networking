@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary</title>
+    <link rel="stylesheet" href="chapter.css">
+</head>
+
+<body>
+    <h1 align="center"><em>Glossary</em></h1>
+    <hr width="500px">
+    <table border="10px" cellspacing="3px" cellpadding="3px">
+        <tr>
+            <td>Term</td>
+            <td align="center">Description</td>
+        </tr>
+        <tr><th colspan="2" align="center"><em><h3>Chapter 1 : computer Network</h3></em></th></tr>
+        <tr>
+            <td><a id="gnetwork" href="./Chapter1.html#network">Network</a></td>
+            <td>A network is a collection of computers, servers, mainframes, network devices, peripherals, or other
+                devices connected to allow data sharing. </td>
+        </tr>
+        <tr>
+            <td> <a id="gswitch" href="./Chapter1.html#switch">Switch</a></td>
+            <td>
+                A switch operates in the layer 2, i.e. data link layer of the OSI Model. <br>
+                It is an intelligent network device that can be conceived as a multiport network bridge. <br>
+                It uses MAC addresses (addresses of medium access control sublayer) to send data packets to selected
+                destination ports.
+            </td>
+        </tr>
+        <tr>
+            <td> <a id="ghub" href="./Chapter1.html#hub">Hub</a></td>
+            <td> A hub operates in the physical layer of the OSI model. <br>
+                A hub cannot filter data. It is a non-intelligent network device that sends message to all ports. <br>
+                It primarily broadcasts messages. So, the collision domain of all nodes connected through the hub stays
+                one.</td>
+        </tr>
+        <tr>
+            <td> <a id="gband" href="./Chapter1.html#band">Bandwidth</a></td>
+            <td>Bandwidth is a measure of the data transfer rate or capacity of a given network. It is a crucial network
+                measurement for understanding the speed and quality of a network. <br>
+                Network bandwidth is commonly measured in bits per second (bps).
+            </td>
+        </tr>
+        <tr>
+            <td><a id="gthrough" href="./Chapter1.html#through">Throughput</a> </td>
+            <td> Throughput is the actual data transferred successfully in a network. <br>
+                Practically, the network throughput would always be less than the network bandwidth.</td>
+        </tr>
+        <tr>
+            <td> <a id="glatency" href="./Chapter1.html#latency">Latency</a> </td>
+            <td> Network latency is a measure of how long it takes a message to travel from one device to another across a network. <br>
+            The more delays there are, the longer it takes to transmit data across a network. <br>
+            Latency is affected by the number of devices on the network and the type of connection device.</td>
+        </tr>
+        <tr><th colspan="2" align="center"><em><h3>chapter 2 : OSI Model</h3></em></td></tr>
+        <tr>
+            <td><a id="gdc" href="./chapter2.html#dc">Dialog control</a> </td>
+            <td> It allows the systems to communicate in either half-duplex or full-duplex mode of communication.</td>
+        </tr>
+        <tr>
+            <td><a id="gs" href="./chapter2.html#s">Segmentation</a></td>
+            <td>Segmentation means to divide something into pieces. When data arrives at the transport layer from the upper layers, it is taken then divided into segments. That is why data at this layer is called segments rather than data. Thus, The PDU (Protocol Data Unit) of this layer is segment(s).
+            </td>
+        </tr>
+        <tr>
+            <td> <a id="gp" href="./chapter2.html#p">Packetization</a></td>
+            <td>The transport layer creates packet out of the messages received from the application layer. Packetizing is a process if dividing a long message into smaller ones.
+                These packets are then encapsulated into data field of the transport layer packet and headers are added .</td>
+        </tr>
+    <tr>
+        <td><a id="garp" href="./chapter2.html#arp">ARP</a></td>
+        <td>The Address Resolution Protocol is a layer 2 protocol used to map MAC addresses to IP addresses.</td>
+    </tr>
+    <tr>
+        <td><a id="grarp" href="./chapter2.html#rarp">RARP</a></td>
+        <td>RARP is used to convert the Ethernet address to an IP address.
+            It is available for the LAN technologies like FDDI, token ring LANs, etc.</td>
+    </tr>
+    <tr>
+        <th colspan="2" align="center"><em><h3>chapter 3 : IEEE 802</h3></em></th>
+    </tr>
+    <tr>
+        <td><a id="gda" href="./chapter3.html#da">DA</a></td>
+        <td> Destination Addresses : It contain the address of the destination node within a network.</td>
+    </tr>
+    <tr>
+        <td><a id="gsa" href="./chapter3.html#sa">SA</a></td>
+        <td> Sourece Address : It contain the address of the source node within the network.</td>
+    </tr>
+    <tr>
+        <td><a  id="gpdu" href="./chapter3.html#pdu">PDU</a></td>
+        <td> Protocol data unit (PDU) is a single unit of information transmitted among peer entities of a computer network.</td>
+    </tr>
+    <tr>
+        <td><a  id="gpayload" href="./chapter3.html#payload">Payload</a></td>
+        <td> Payload contains all the data and the actual data.</td>
+    </tr>
+    <tr>
+        <td><a  id="gcrc" href="./chapter3.html#crc">CRC</a></td>
+        <td>Cyclic Redundancy Check (CRC) : CRC is 4 Byte field. This field contains a 32-bits hash code of data, which is generated over the Destination Address, Source Address, Length, and Data field. If the checksum computed by destination is not the same as sent checksum value, data received is corrupted.</td>
+    </tr>
+    <tr>
+        <td><a  id="ggfc" href="./chapter3.html#gfc">GFC</a></td>
+        <td> Generic Flow Control : It is used to define a multiplicity of users at a common interface. </td>
+    </tr>
+    <tr>
+        <td><a  id="gvpi" href="./chapter3.html#vpi">VPI</a></td>
+        <td>VPI— The Virtual Path Identifier is an 8- or 12-bit field used to identify paths between sites on the ATM network</td>
+    </tr>
+    <tr>
+        <td><a  id="gvci" href="./chapter3.html#vci">VCI</a></td>
+        <td> VCI- The Virtual Connection Identifier is a 16-bit field used to identify paths between individual devices on the ATM network.</td>
+    </tr>
+    <tr>
+        <td><a  id="gpt" href="./chapter3.html#pt">PT</a></td>
+        <td> PTI-The Payload Type Indicator is a 3-bit field used to identify one of eight traffic types carried in the cell.</td>
+    </tr>
+    <tr>
+        <td><a  id="gclp" href="./chapter3.html#clp">CLP</a></td>
+        <td> CLP- The Cell Loss Priority bit serves the same function as the DE bit in frame relay, but identifies cells to discard when congestion occurs.</td>
+    </tr>
+    <tr>
+        <td><a  id="ghec" href="./chapter3.html#hec">HEC</a></td>
+        <td>The Header Error Control byte not only detects bit errors in the entire 40-bit header, but can also correct single bit errors.</td>
+    </tr>
+    <tr>
+        <th colspan="2" align="center"><em><h3>Chapter 4 :IP Address</h3></em></th>
+    </tr>
+    <tr>
+        <td><a  id="giana" href="./chapter4.html#iana">IANA</a></td>
+        <td>IANA (Internet Assigned Numbers Authority) is the organization that oversees the allocation of IP addresses to internet service providers (ISPs).</td>
+    </tr>
+    <tr>
+        <td><a  id="gni" href="./chapter4.html#ni">Network ID</a></td>
+        <td>To calculate the network id, put the network id part same and host id part 0.</td>
+    </tr>
+    <tr>
+        <td><a  id="ghi" href="./chapter4.html#hi">Host ID</a></td>
+        <td>A host ID can be found simply by ANDing the IP address in binary form with its respective default subnet mask (in binary form). The other fragment of an IP address is the network ID, which identifies the network to which the host belongs.</td>
+    </tr>
+    </table>
+    <div class="copy" align="center">&copy; created by saloni sinha</div>
+</body>
+
+</html>

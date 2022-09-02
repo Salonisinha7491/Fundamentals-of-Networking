@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3</title>
+    <link rel="stylesheet" href="chapter.css">
+</head>
+
+<body>
+    <h1 align="center">IEEE 802</h1>
+    <div class="index">
+        <button><a href="index.html">Index</a></button>
+        </div>
+    <hr width="500px">
+    <p>IEEE stands for <strong> Institute of Electronic and Electrical Engineering</strong>. 802 is the model or project
+        of IEEE for detail study of LAN/MAN. </p>
+    IEEE provides:-
+    <ol>
+        <li>Format</li>
+        <li>Security</li>
+        <li>Speed</li>
+    </ol>
+    <h4>IEEE Project</h4>
+    <table border="5px" cellpadding="5px" cellspacing="10px">
+        <tr>
+            <th>Active Working</th>
+            <th>Hibernate(standard but inactive)</th>
+            <th>Distandard(withdrawn)</th>
+        </tr>
+        <tr>
+            <td>802.1</td>
+            <td>802.2 (LLC "logical link control")</td>
+            <td>802.4 (Token Bus)</td>
+        </tr>
+        <tr>
+            <td>802.3 (CSMA/CD)</td>
+            <td>802.5 (Token Ring)</td>
+            <td>802.14 (cable Tv broadband based )</td>
+        </tr>
+        <tr>
+            <td>802.11 (WLAN))</td>
+            <td>802.12 (Demand Priority)</td>
+            <td>802.8 (FOTAG ,fiber optic)</td>
+        </tr>
+        <tr>
+            <td>802.15 (WPAN)</td>
+        </tr>
+        <tr>
+            <td>802.20 (Mobile wireless Access)</td>
+        </tr>
+    </table>
+    <h2 align="center">Ethernet</h2>
+    <hr width="500px">
+    <table border="5px" cellspacing="10px" cellpadding="5px">
+        <tr>
+            <td>Standard Ethernet</td>
+            <td>10mbps</td>
+            <td>802.3</td>
+        </tr>
+        <tr>
+            <td>Fast Ethernet</td>
+            <td>100mbps</td>
+            <td>802.3u</td>
+        </tr>
+        <tr>
+            <td>Gigabit Ethernet</td>
+            <td>1gbps</td>
+            <td>802.3z</td>
+        </tr>
+        <tr>
+            <td>Ten Gigabit Ethernet</td>
+            <td>10gbps</td>
+            <td>802.3ae</td>
+        </tr>
+    </table>
+    <h3 align="center"><em>Frame Format of Ethernet</em></h3>
+    <table border="5px" cellspacing="10px" cellpadding="10px" align="center">
+        <tr>
+            <th> <a  id="da" href="./glossary.html#gda">DA</a></th>
+            <th>  <a  id="sa" href="./glossary.html#gsa">SA</a></th>
+            <th>Length and Type of  <a  id="pdu" href="./glossary.html#gpdu">PDU</a></th>
+            <th><a  id="payload" href="./glossary.html#gpayload">Payload</a></th>
+            <th><a  id="crc" href="./glossary.html#gcrc">CRC</a></th>
+        </tr>
+        <tr>
+            <th>6 Bytes</th>
+            <th>6 Bytes</th>
+            <th>2 Bytes</th>
+            <th>46-1500 Bytes</th>
+            <th>4 Bytes</th>
+        </tr>
+    </table>
+    <p align="center"><em>Fig 1:- Data format at MAC (Multiple Access control Sublayer) layer :-</em></p><br>
+    <table border="2px" cellspacing="10px" cellpadding="10px" align="center">
+        <tr>
+            <th>Preamble</th>
+            <th>SFD</th>
+            <th>DA</th>
+            <th>SA</th>
+            <th>Length and Type of PDU</th>
+            <th>Payload</th>
+            <th>CRC</th>
+        </tr>
+        <tr>
+            <th>7 Bytes</th>
+            <th>1 Bytes</th>
+            <th>6 Bytes</th>
+            <th>6 Bytes</th>
+            <th>2 Bytes</th>
+            <th>46-1500 Bytes</th>
+            <th>4 Bytes</th>
+        </tr>
+    </table>
+    <p align="center"><em> Fig 2:- Data format at Physical layer</em></p><br>
+
+    <h3>MAC Sublayer Duties (CSMA)</h3>
+    <ol>
+        <li>Mode Interface</li>
+        <li>Data encapsulation or decapsulation</li>
+        <li>Link Management</li>
+        <li>Collision Management</li>
+    </ol>
+    <h3>Physical layer Duties (CSMA/CD)</h3>
+    <ol>
+        <li>Encoding Schemes</li>
+        <li>Collision Detection</li>
+        <li>Carrier Sensing</li>
+        <li>Transmission And Acknowledgement.</li>
+    </ol>
+
+    <h3 align="center">Access Method of Ethernet:CSMA/CD</h3>
+    <hr width="500px">
+    Steps involve in CSMA/CD:-
+    <ul>
+        <li>Step 1:- Sense the Carrier (i.e, backbone cable).</li>
+        <li>Step 2:- If Carrier is idle, then transmit data.</li>
+        <li>Step 3:- Else if Carrier is busy, then </li>
+        <li>Step 4:- (a) Wait for random amount of time, It is define through algorithm i.e Binary Back off algorithm or
+            Exponential back off algorithm</li>
+        <li>(b) Go to step 1</li>
+    </ul>
+    <h3 align="center">Binary BackOff Algorithm</h3>
+    <hr width="500px">
+    Some Factor are :-
+    <ol>
+        <li>n &nbsp= Number of collsion(for a frame or datapacket)</li>
+        <li>Contension Window(C.W) &nbsp= It is a container that hold the variable,waiting time that range from 0 to 2
+            raise to power n-1 </li>
+        <li>Waiting time &nbsp = Random number choosen from Contension Window &nbsp x &nbsp T slot </li>
+        <li> T slot &nbsp= Maxmium Propagation delay</li>
+        <li> T slot &nbsp= 2t &nbsp where t is From Source to destination time required.</li>
+    </ol>
+    <h3>Drawback : Capture Effect</h3>
+    <p>If a station win collision one time then its probability of winning successive collision is going to increase
+        Exponentially.</p>
+    <p>To overcome this limitation of CSMA/CD, we move to the other method which is <strong>Switch Ethernet</strong>
+        (use star topology with switch)</p>
+    <h4>Summary:</h4>
+    <ul>
+        <li>Speed &nbsp = Upto 10 mbps</li>
+        <li>Access Method &nbsp = CSMA/CD</li>
+        <li>Topology &nbsp = BUS</li>
+        <li>Number of frame &nbsp = 1</li>
+    </ul>
+    <h3 align="center">Token Ring(802.5)</h3>
+    <hr width="500px">
+    <h4>Frame in Token Ring</h4>
+    <p>Number of frame in Token Ring are =3
+    <ol>
+        <li>Token frame <br><br>
+            <table border="5px" cellspacing="3px" cellpadding="4px">
+                <tr>
+                    <td>SD</td>
+                    <td>AC</td>
+                    <td>ED</td>
+                </tr>
+                <tr>
+                    <td>1 byte</td>
+                    <td>1 byte</td>
+                    <td>1 byte</td>
+                </tr>
+            </table>
+        </li><br><br>
+        <li>Data frame <br><br>
+            <table border="3px" cellspacing="4px" cellpadding="2px">
+                <tr>
+                    <td>SD</td>
+                    <td>AC</td>
+                    <td>FC</td>
+                    <td>DA</td>
+                    <td>SA</td>
+                    <td>Payload</td>
+                    <td>FCS</td>
+                    <td>ED</td>
+                    <td>FS</td>
+                </tr>
+                <tr>
+                    <td>1 byte</td>
+                    <td>1 byte</td>
+                    <td>1 byte</td>
+                    <td>6 bytes</td>
+                    <td>6 bytes</td>
+                    <td>0-4600 bytes</td>
+                    <td>4 bytes</td>
+                    <td>1 bytes</td>
+                    <td>1 bytes</td>
+                </tr>
+            </table>
+        </li><br><br>
+        <li>Abort frame <br><br>
+            <table border="3px" cellspacing="4px" cellpadding="2px">
+                <tr>
+                    <td>SD</td>
+                    <td>ED</td>
+                </tr>
+                <tr>
+                    <td>1 byte</td>
+                    <td>1 byte</td>
+                </tr>
+            </table>
+        </li>
+    </ol>
+    </p>
+    <h4>summary</h4>
+    <ol>
+        <li>Speed &nbsp= upto 16 mbps</li>
+        <li>Access Method &nbsp= Token passing</li>
+        <li>Topology &nbsp=Ring</li>
+        <li>Number of frame &nbsp=3</li>
+    </ol>
+    <h3 align="center">Token Bus (802.4)</h3>
+    <hr width="500px">
+    <h4>Frame Format in token bus.</h4>
+    <ol>
+        <li>Token Frame <br><br>
+            <Table border="3px" cellspacing="4px" cellpadding="2px">
+                <tr>
+                    <td>SD</td>
+                    <td>AC</td>
+                    <td>ED</td>
+                </tr>
+                <tr>
+                    <td>1 byte</td>
+                    <td>1 byte</td>
+                    <td>1 byte</td>
+                </tr>
+            </Table>
+        </li> <br><br>
+        <li>Data Frame <br><br>
+            <table border="3px" cellspacing="2px" cellpadding="3px">
+                <tr>
+                    <td>SD</td>
+                    <td>Fc</td>
+                    <td>DA</td>
+                    <td>SA</td>
+                    <td>Payload</td>
+                    <td>FCS</td>
+                    <td>ED</td>
+                </tr>
+                <tr>
+                    <td>1 byte</td>
+                    <td>1 byte</td>
+                    <td>6 bytes</td>
+                    <td>6 bytes</td>
+                    <td>0-4600 bytes</td>
+                    <td>4 bytes</td>
+                    <td>1 byte</td>
+                </tr>
+            </table>
+        </li><br><br>
+        <li>Abort Frame <br><br>
+            <table border="2px" cellspaccing="3px" cellpadding="3px">
+                <tr>
+                    <td>SD</td>
+                    <td>ED</td>
+                </tr>
+                <tr>
+                    <td>1 byte</td>
+                    <td>1 byte</td>
+                </tr>
+            </table>
+        </li>
+    </ol>
+    <h4>Summary</h4>
+    <ol>
+        <li>Speed &nbsp= upto 4 mbps</li>
+        <li>Access Method &nbsp= Token passing</li>
+        <li>Topology &nbsp=Bus topology(physical) <br>
+            Ring topology(logical)</li>
+        <li>Number of frame &nbsp=3</li>
+    </ol>
+    <h3 align="center">FDDI &nbsp(Fiber Distributed Data Interface)</h3>
+    <hr width="500px">
+    <table border="3px" cellspacing="4px" cellpadding="2px">
+        <tr>
+            <td rowspan="2">Data link layer</td>
+            <td>LLC(logical link control)</td>
+            <td rowspan="3">Station Management</td>
+        </tr>
+        <tr>
+            <td> MAC(Multiple Access Control)</td>
+        </tr>
+        <tr>
+            <td>Physical layer</td>
+            <td>PMD (Physical Medium Dependent)</td>
+        </tr>
+    </table>
+    <h4>Frame format</h4>
+    <ol>
+        <li>Token Frame <br><br>
+            <table border="2px" cellspacing="3px" cellpadding="2px">
+                <tr>
+                    <td>SD</td>
+                    <td>FC</td>
+                    <td>ED</td>
+                </tr>
+            </table>
+        </li><br><br>
+        <li>Data Frame <br><br>
+            <table border="3px" cellspacing="4px" cellpadding="4px">
+                <tr>
+                    <td>SD</td>
+                    <td>FC</td>
+                    <td>DA</td>
+                    <td>SA</td>
+                    <td>payload</td>
+                    <td>CRC</td>
+                    <td>ED</td>
+                    <td>FS</td>
+                </tr>
+                <tr>
+                    <td>1 byte</td>
+                    <td>1 byte</td>
+                    <td>6 bytes</td>
+                    <td>6 bytes</td>
+                    <td>0-4500 bytes</td>
+                    <td>4 bytes</td>
+                    <td>0.5 byte</td>
+                    <td>1.5 byte</td>
+                </tr>
+            </table>
+        </li><br><br>
+        <li>Abort frame <br><br>
+            <table border="2px" cellspacing="3px" cellpadding="2px">
+                <tr>
+                    <td>SD</td>
+                    <td>ED</td>
+                </tr>
+                <tr>
+                    <td>1 byte</td>
+                    <td>1 byte</td>
+                </tr>
+            </table>
+        </li>
+    </ol>
+    <h4>summary</h4>
+    <ol>
+        <li>Speed &nbsp= &nbsp 100 mbps</li>
+        <li>Topology &nbsp= &nbsp Ring,star</li>
+        <li>Access method &nbsp= &nbsp Token passing</li>
+        <li>Frame format &nbsp= &nbsp 3</li>
+        <li>Range &nbsp= &nbsp upto 200 km</li>
+        <li>Transmission Medium &nbsp= &nbsp Fiber optic cable</li>
+    </ol>
+    <h3 align="center">ATM &nbsp (Asynchronous Transfer Mode)</h3>
+    <hr width="500px">
+    <p>It is originated in 1876 by ITU-T(International Telecommunication Union).
+        It is a connection oriented network that support voice,video and data Communication. <br><br>
+        <strong> ATM procedure: </strong>
+    <ol type="I">
+        <li>Line set up</li>
+        <li>Communication Establish</li>
+        <li>Line Terminate</li>
+    </ol>
+    <strong>Target of ATM</strong>
+    <ol>
+        <li>Speed</li>
+        <li>Backward compatibility</li>
+        <li>Mass population</li>
+    </ol>
+    </p>
+    <h4 align="center">ATM layer</h4>
+    <hr width="500px">
+    <ul>
+        <li>1st layer of abstraction <br><br>
+            <table border="2px" cellspacing="3px" cellpadding="2px">
+                <tr>
+                    <td>AAL(ATM Adaptation Layer)</td>
+                </tr>
+                <tr>
+                    <td>ATM</td>
+                </tr>
+                <tr>
+                    <td>Physical</td>
+                </tr>
+            </table>
+        </li> <br><br>
+        <li>2nd layer of abstraction <br><br>
+            <table border="3px" cellspacing="4px" cellpadding="4px">
+                <tr>
+                    <td>AAL</td>
+                    <td>CS SAR</td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">ATM</td>
+                </tr>
+                <tr>
+                    <td>Physical</td>
+                    <td>TC physical</td>
+                </tr>
+            </table>
+        </li><br><br>
+        <li>Actual implementation <br><br>
+            <table border="4px" cellspacing="4px" cellpadding="4px">
+                <tr>
+                    <td>AAL 1</td>
+                    <td>AAL 2</td>
+                    <td>AAL 3/4</td>
+                    <td>AAL 5</td>
+                </tr>
+                <tr>
+                    <td>CS &nbsp (47 Bytes)</td>
+                    <td>CS &nbsp (45 Bytes)</td>
+                    <td>CS &nbsp (44 Bytes)</td>
+                    <td>CS &nbsp (47 Bytes)</td>
+                </tr>
+                <tr>
+                    <td>SAR &nbsp (1 Byte)</td>
+                    <td>SAR &nbsp (1+2 Byte)</td>
+                    <td>SAR &nbsp (2+2 Byte)</td>
+                    <td>SAR &nbsp (1 Byte)</td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="center">ATM &nbsp (5 Bytes)</td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="center">Physical</td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+    <strong>
+        <ul>
+            <li>cell division size is 56 bytes</li>
+        </ul>
+    </strong>
+    <h3 align="center">Cell Format</h3>
+    <hr width="500px">
+    <ol>
+        <li>UNI - user to network interface <br><br>
+            <table border="4px" cellspacing="4px" cellpadding="4px">
+                <tr>
+                    <td align="center"> <a  id="gfc" href="./glossary.html#gcfc">GFC &nbsp(4 Bits)</a></td>
+                    <td colspan="2" align="center"> <a  id="vpi" href="./glossary.html#gvpi">VPI &nbsp (4 Bits)</a> </td>
+                </tr>
+                <tr>
+                    <td align="center">VPI &nbsp (4 Bits)</td>
+                    <td colspan="2" align="center"> <a  id="vci" href="./glossary.html#gvci">VCI &nbsp (4 Bits)</a></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">VCI &nbsp (8 bits)</td>
+                </tr>
+                <tr>
+                    <td>VCI &nbsp(4 Bits)</td>
+                    <td><a  id="pt" href="./glossary.html#gpt">PT &nbsp (3 Bits)</a></td>
+                    <td><a  id="clp" href="./glossary.html#gclp">CLP &nbsp (1 bit)</a></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center"> <a  id="hec" href="./glossary.html#ghec">HEC &nbsp (8 Bits)</a></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">Payload &nbsp (48 Bytes)</td>
+                </tr>
+            </table>
+            <strong>VPI=8 bits</strong>&nbsp <strong>VCI=16 bits</strong>
+        </li><br><br>
+        <li> NNI - network to network interface <br><br>
+            <table border="2px" cellspacing="3px" cellpadding="3px">
+                <tr>
+                    <td colspan="3" align="center">VPI &nbsp(8 Bits)</td>
+                </tr>
+                <tr>
+                    <td>VPI &nbsp (4 Bits)</td>
+                    <td  colspan="2" align="center">VCI &nbsp (4 Bits)</td>
+                </tr>
+                <tr>
+                    <td colspan="3" >VCI &nbsp (8 Bits)</td>
+                </tr>
+                <tr>
+                    <td>VCI &nbsp (4 Bits )</td>
+                    <td>PT &nbsp (3 Bits)</td>
+                    <td>CLP &nbsp (1 Bits)</td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">HEC &nbsp (8 Bits)</td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">Payload &nbsp (48 Bytes)</td>
+                </tr>
+            </table>
+            <strong>VPI=12 bits</strong>&nbsp <strong>VCI=16 bits</strong>
+            </li>
+    </ol>
+    <br>
+    <button> &larr;&nbsp<a href="./chapter2.html">Previous</a></button>
+    <div class="align">    
+        <button> <a href="./chapter4.html" >Next</a> &nbsp &rarr;</button>  
+        </div>
+</body>
+
+</html>
